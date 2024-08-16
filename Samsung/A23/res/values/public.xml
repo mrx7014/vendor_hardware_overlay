@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <public type="array" name="config_autoBrightnessLcdBacklightValues" id="0x7f030000" />
-    <public type="array" name="config_autoBrightnessLevels" id="0x7f030001" />
+    <public type="array" name="config_autoBrightnessLevels" id="0x7f040001" />
     <public type="dimen" name="config_screenBrightnessSettingDefaultFloat" id="0x7f040000" />
     <public type="dimen" name="config_screenBrightnessSettingMaximumFloat" id="0x7f040001" />
     <public type="dimen" name="config_screenBrightnessSettingMinimumFloat" id="0x7f040002" />
