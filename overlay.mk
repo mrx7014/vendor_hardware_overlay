@@ -95,6 +95,8 @@ PRODUCT_PACKAGES += \
 	treble-overlay-mbi-s10-systemui \
 	treble-overlay-meizu-m2181 \
 	treble-overlay-meizu-m2181-systemui \
+	treble-overlay-meizu-m2461 \
+	treble-overlay-meizu-m2461-systemui \
 	treble-overlay-misc-aod \
 	treble-overlay-misc-aod-systemui \
 	treble-overlay-misc-dt2w \
@@ -163,6 +165,8 @@ PRODUCT_PACKAGES += \
 	treble-overlay-oneplus-n200-systemui \
 	treble-overlay-oneplus-nord \
 	treble-overlay-oneplus-nord-systemui \
+	treble-overlay-oneplus-nord4 \
+	treble-overlay-oneplus-nord4-systemui \
 	treble-overlay-oneplus-nordce \
 	treble-overlay-oneplus-nordce-systemui \
 	treble-overlay-oneplus-op10pro \
