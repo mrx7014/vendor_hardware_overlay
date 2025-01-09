@@ -2,7 +2,7 @@
 
 set -e
 
-if [ "$1" == "--local-aapt" ];then
+if [ "$1" == "--local-aapt" ]; then
     export LD_LIBRARY_PATH=.
     export PATH=.:$PATH
     shift
@@ -10,30 +10,37 @@ fi
 
 script_dir="$(dirname "$(readlink -f -- "$0")")"
 if [ "$#" -eq 1 ]; then
-    if [ -d "$1" ];then
-	    makes="$(find "$1" -name Android.mk -exec readlink -f -- '{}' \;)"
+    if [ -d "$1" ]; then
+        makes="$(find "$1" -name Android.mk -exec readlink -f -- '{}' \;)"
 
     else
-	    makes="$(readlink -f -- "$1")"
+        makes="$(readlink -f -- "$1")"
     fi
 else
     cd "$script_dir"
     makes="$(find "$PWD/.." -name Android.mk)"
 fi
 
-if ! command -v aapt > /dev/null;then
+if ! command -v aapt > /dev/null; then
     export LD_LIBRARY_PATH=.
     export PATH=$PATH:.
 fi
 
-if ! command -v aapt > /dev/null;then
+if ! command -v aapt > /dev/null; then
     echo "Please install aapt (apt install aapt should do)"
     exit 1
 fi
 
 cd "$script_dir"
 
-echo "$makes" | while read -r f;do
+echo "$makes" | while read -r f; do
+    folder="$(dirname "$f")"
+
+    # Check if it's in the Samsung/A23 folder
+    if [[ "$folder" != *"Samsung/A23"* ]]; then
+        continue  # Skip if it's not in Samsung/A23
+    fi
+
     name="$(sed -nE 's/LOCAL_PACKAGE_NAME.*:\=\s*(.*)/\1/p' "$f")"
     grep -q treble-overlay <<<"$name" || continue
     echo "Generating $name"
