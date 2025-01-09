@@ -2,7 +2,7 @@
 <resources>
     <!-- Configuring auto-brightness levels as an array -->
     <public type="array" name="config_autoBrightnessLcdBacklightValues" id="0x7f030000" />
-    <public type="array" name="config_autoBrightnessLevels" id="0x7f040001" />
+    <public type="array" name="config_autoBrightnessLevels" id="0x7f030001" />
 
     <!-- Dimen values -->
     <public type="dimen" name="config_screenBrightnessSettingDefaultFloat" id="0x7f040000" />
